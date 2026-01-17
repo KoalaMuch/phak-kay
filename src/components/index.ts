@@ -1,0 +1,9 @@
+export { Navigation } from './Navigation';
+export { Hero } from './Hero';
+export { Highlights } from './Highlights';
+export { Gallery } from './Gallery';
+export { Rooms } from './Rooms';
+export { Benefits } from './Benefits';
+export { Location } from './Location';
+export { Contact } from './Contact';
+export { Footer } from './Footer';

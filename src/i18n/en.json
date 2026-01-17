@@ -1,0 +1,219 @@
+{
+  "metadata": {
+    "title": "Phakkay Camping | Riverside Resort in Saraburi near Cha Om",
+    "description": "Affordable riverside resort in Saraburi, Thailand. Nordic, Japanese & A-Frame style accommodations by the stream near Cha Om and Krok Ee Dok Waterfall. Free breakfast, stunning river views. Budget-friendly Saraburi accommodation.",
+    "keywords": "Saraburi accommodation, Cha Om resort, riverside resort Saraburi, budget resort Saraburi, stream-side accommodation, Krok Ee Dok Waterfall hotel, A-frame cabin Thailand"
+  },
+  "nav": {
+    "highlights": "Highlights",
+    "gallery": "Gallery",
+    "rooms": "Rooms",
+    "benefits": "Benefits",
+    "location": "Location",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tagline": "Escape to Tranquility",
+    "title": "Phakkay Camping",
+    "subtitle": "Where Nature Meets Serenity",
+    "description": "A peaceful riverside retreat featuring Nordic, Japanese, and A-Frame style accommodations, surrounded by stunning mountain views and the gentle sounds of flowing water.",
+    "cta": "Explore Our Resort",
+    "ctaSecondary": "View Gallery"
+  },
+  "highlights": {
+    "title": "What Makes Us Special",
+    "subtitle": "Discover the unique experiences awaiting you at our peaceful riverside sanctuary",
+    "items": {
+      "river": {
+        "title": "Riverside Serenity",
+        "description": "Wake up to the gentle sounds of the river flowing right in front of our resort. Perfect for morning meditation or evening relaxation."
+      },
+      "accommodation": {
+        "title": "Unique Accommodations",
+        "description": "Choose between Nordic, Japanese, or A-Frame style houses, each designed for an intimate escape."
+      },
+      "peaceful": {
+        "title": "Intimate & Peaceful",
+        "description": "With only 5 exclusive units, we ensure a truly peaceful environment where you can disconnect and recharge."
+      },
+      "waterfall": {
+        "title": "Near Krok Ee Dok Waterfall",
+        "description": "Just 10 minutes drive to the stunning Krok Ee Dok Waterfall. A perfect day trip for nature lovers."
+      },
+      "transport": {
+        "title": "Easy Access",
+        "description": "Conveniently located with easy transportation access from Bangkok and surrounding areas."
+      },
+      "views": {
+        "title": "Stunning Views",
+        "description": "Relax and chill with breathtaking mountain views, fresh air, and perfect weather year-round."
+      },
+      "dining": {
+        "title": "Local Cuisine Nearby",
+        "description": "Explore numerous restaurants and cafés just minutes away, offering authentic Thai cuisine and cozy coffee spots."
+      }
+    }
+  },
+  "gallery": {
+    "title": "Experience Our Resort",
+    "subtitle": "Explore every corner of our peaceful riverside sanctuary",
+    "dayNightToggle": {
+      "day": "Day",
+      "night": "Night"
+    },
+    "categories": {
+      "overview": {
+        "title": "Resort Overview",
+        "description": "Welcome to Phakkay Camping - where tranquility meets nature"
+      },
+      "nordicRoom": {
+        "title": "Nordic Style Room",
+        "description": "Modern Scandinavian comfort with cozy warmth for 2 guests"
+      },
+      "japanRoom": {
+        "title": "Japanese Style Room",
+        "description": "Zen-inspired design with minimalist elegance for 2 guests"
+      },
+      "aShapeRoom": {
+        "title": "A-Frame Cabin",
+        "description": "Unique triangular design with loft bedroom - perfect for up to 4 guests"
+      },
+      "river": {
+        "title": "River Views",
+        "description": "Wake up to the soothing sounds of flowing water"
+      },
+      "food": {
+        "title": "Dining & BBQ",
+        "description": "Enjoy complimentary breakfast and optional BBQ dinner"
+      }
+    },
+    "filters": {
+      "all": "All",
+      "overview": "Overview",
+      "nordicRoom": "Nordic Room",
+      "japanRoom": "Japanese Room",
+      "aShapeRoom": "A-Frame",
+      "river": "River",
+      "food": "Food"
+    }
+  },
+  "rooms": {
+    "title": "Our Accommodations",
+    "subtitle": "Choose your perfect retreat - each room offers river views and intimate comfort",
+    "capacity": "Up to {count} guests",
+    "types": {
+      "nordic": {
+        "title": "Nordic Style",
+        "description": "Experience modern Scandinavian design with warm, cozy interiors. Our Nordic rooms feature clean lines, natural materials, and a minimalist aesthetic that creates the perfect sanctuary for relaxation.",
+        "features": [
+          "River view",
+          "King-size bed",
+          "Private bathroom",
+          "Air conditioning",
+          "Free WiFi",
+          "Minibar"
+        ]
+      },
+      "japanese": {
+        "title": "Japanese Style",
+        "description": "Embrace the art of Zen living in our Japanese-inspired rooms. Traditional elements blend with modern comfort, offering a serene space that promotes peace and mindfulness.",
+        "features": [
+          "River view",
+          "King-size bed",
+          "Private bathroom",
+          "Air conditioning",
+          "Free WiFi",
+          "Minibar"
+        ]
+      },
+      "aShape": {
+        "title": "A-Frame Cabin",
+        "description": "Discover our unique A-Frame cabins with their distinctive triangular design. Features a cozy ground floor bedroom and an adventurous loft sleeping area - perfect for families or groups of friends.",
+        "features": [
+          "River view",
+          "2 Sleeping areas",
+          "Loft bedroom",
+          "Private bathroom",
+          "Air conditioning",
+          "Free WiFi",
+          "Minibar"
+        ]
+      }
+    }
+  },
+  "benefits": {
+    "title": "Your Stay Includes",
+    "subtitle": "Everything you need for a perfect getaway",
+    "items": {
+      "riverView": {
+        "title": "River View Every Room",
+        "description": "Every room features stunning views of the flowing stream"
+      },
+      "breakfast": {
+        "title": "Free Breakfast",
+        "description": "Start your day with a complimentary breakfast"
+      },
+      "wifi": {
+        "title": "Free WiFi",
+        "description": "Stay connected with high-speed internet"
+      },
+      "minibar": {
+        "title": "Minibar",
+        "description": "Complimentary snacks and beverages"
+      },
+      "smoking": {
+        "title": "Smoking Area",
+        "description": "Designated outdoor smoking areas available"
+      }
+    }
+  },
+  "restrictions": {
+    "title": "Please Note",
+    "checkIn": "Check-in from 2:00 PM",
+    "noPets": "No pets allowed",
+    "capacity": "Maximum 2-4 guests per unit"
+  },
+  "location": {
+    "title": "Find Us",
+    "subtitle": "Nestled in the heart of Saraburi's natural beauty",
+    "address": "391 Cha Om, Kaeng Khoi District, Saraburi 18110, Thailand",
+    "directions": "Get Directions",
+    "nearby": {
+      "title": "Nearby Attractions",
+      "waterfall": "Krok Ee Dok Waterfall - 10 min drive",
+      "restaurants": "Local restaurants & cafés - 5 min drive"
+    }
+  },
+  "contact": {
+    "title": "Book Your Escape",
+    "subtitle": "Ready to experience tranquility? Get in touch with us",
+    "phone": "Call to Reserve",
+    "phoneNote": "We have only 5 exclusive units, booking via phone ensures personalized service",
+    "social": {
+      "title": "Connect With Us",
+      "line": "LINE",
+      "facebook": "Facebook"
+    },
+    "form": {
+      "title": "Send an Inquiry",
+      "name": "Your Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "message": "Your Message",
+      "checkIn": "Preferred Check-in Date",
+      "guests": "Number of Guests",
+      "submit": "Send Inquiry",
+      "sending": "Sending...",
+      "success": "Thank you! We'll get back to you soon.",
+      "error": "Something went wrong. Please try calling us instead."
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Phakkay Camping. All rights reserved.",
+    "tagline": "Your peaceful riverside retreat"
+  },
+  "language": {
+    "switch": "ภาษาไทย",
+    "current": "English"
+  }
+}
