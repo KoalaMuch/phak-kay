@@ -104,6 +104,8 @@ Bun provides significantly faster performance:
 | `bun run test` | Run unit tests |
 | `bun run test:watch` | Run tests in watch mode |
 | `bun run test:e2e` | Run E2E tests |
+| `bun run storybook` | Start Storybook dev server |
+| `bun run storybook:build` | Build Storybook for deployment |
 
 > **Note**: You can also use `npm` or `yarn` instead of `bun`, but Bun is recommended for best performance.
 
@@ -185,13 +187,39 @@ bun run start
 2. Install Bun: `curl -fsSL https://bun.sh/install | bash`
 3. Install dependencies: `bun install`
 4. Start dev server: `bun run dev`
-5. Make your changes
-6. Run linting and tests:
+5. Start Storybook: `bun run storybook`
+6. Make your changes
+7. Run linting and tests:
    ```bash
    bun run lint
    bun run format
    bun run test
+   bun run storybook:build
    ```
+
+### Development Workflow
+
+| Command | Purpose |
+|---------|---------|
+| `bun run dev` | Start Next.js dev server (http://localhost:3000) |
+| `bun run storybook` | Start Storybook (http://localhost:6006) |
+| `bun run test` | Run unit tests |
+| `bun run lint` | Check for lint errors |
+
+### Storybook
+
+We use Storybook for visual testing and component development:
+
+```bash
+bun run storybook        # Start dev server
+bun run storybook:build  # Build for CI
+```
+
+**Features:**
+- 🌐 Language switcher (Thai/English) in toolbar
+- 📱 Viewport presets (Mobile, Tablet, Desktop)
+- ♿ Accessibility checks (a11y addon)
+- 📖 Auto-generated documentation
 
 ### Git Workflow
 
@@ -200,11 +228,22 @@ bun run start
 3. Push to branch: `git push origin feature/amazing-feature`
 4. Open Pull Request
 
+### CI/CD Pipeline
+
+On every push to `main`:
+1. **CI** → Lint, test, build validation, Storybook build
+2. **Deploy** → Auto-deploy to Vercel production
+
+On Pull Requests:
+- CI runs all checks
+- Preview deployment created automatically
+
 ### Code Style
 
 - Follow ESLint rules (run `bun run lint:fix` to auto-fix)
 - Use Prettier for formatting (run `bun run format`)
 - Write tests for new features
+- Write Storybook stories for new components
 - Use semantic commit messages
 - Add `data-component` attribute to new components for debugging
 
@@ -223,9 +262,19 @@ chore: maintenance tasks
 ### Component Guidelines
 
 - All components should have `data-component="component-name"` attribute
+- Create a `.stories.tsx` file for each component
 - Use `next/image` with `unoptimized` prop for gallery images
 - Follow existing i18n patterns (add strings to both `en.json` and `th.json`)
 - Use Tailwind CSS classes following the existing theme
+
+### Testing Strategy
+
+| Type | Tool | Command |
+|------|------|---------|
+| Unit Tests | Jest | `bun run test` |
+| Visual Testing | Storybook | `bun run storybook` |
+| E2E Tests | Playwright | `bun run test:e2e` |
+| Accessibility | Storybook a11y | Built into Storybook |
 
 ## License
 

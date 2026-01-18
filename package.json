@@ -16,7 +16,10 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "test:e2e": "playwright test",
-    "test:e2e:ui": "playwright test --ui"
+    "test:e2e:ui": "playwright test --ui",
+    "storybook": "storybook dev -p 6006",
+    "storybook:build": "storybook build -o storybook-static",
+    "storybook:test": "test-storybook"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -33,6 +36,13 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.44.1",
+    "@storybook/addon-a11y": "8",
+    "@storybook/addon-essentials": "8",
+    "@storybook/addon-interactions": "8",
+    "@storybook/addon-links": "8",
+    "@storybook/experimental-nextjs-vite": "8",
+    "@storybook/react": "8",
+    "@storybook/test": "8",
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^16.0.0",
     "@types/jest": "^30.0.0",
@@ -50,6 +60,7 @@
     "postcss": "^8.4.38",
     "prettier": "^3.3.2",
     "prettier-plugin-tailwindcss": "^0.6.4",
+    "storybook": "8",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.4.5"
   }
