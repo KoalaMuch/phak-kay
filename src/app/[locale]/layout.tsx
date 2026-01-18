@@ -104,7 +104,7 @@ export default async function LocaleLayout({
         : 'Affordable riverside resort in Saraburi, Thailand. Nordic & Japanese style accommodations near Cha Om and Krok Ee Dok Waterfall.',
     image: `${baseUrl}/images/resort_garden_evening.jpg`,
     url: baseUrl,
-    telephone: '+66-XX-XXX-XXXX',
+    telephone: '+66925024995',
     priceRange: '฿฿',
     address: {
       '@type': 'PostalAddress',
@@ -161,7 +161,10 @@ export default async function LocaleLayout({
       },
       geoRadius: '50000',
     },
-    sameAs: ['#FACEBOOK_PLACEHOLDER', '#LINE_PLACEHOLDER'],
+    sameAs: [
+      'https://www.facebook.com/p/%E0%B8%9E%E0%B8%B1%E0%B8%81%E0%B8%81%E0%B8%B2%E0%B8%A2-%E0%B9%81%E0%B8%84%E0%B8%A1%E0%B8%9B%E0%B9%8C%E0%B8%9B%E0%B8%B4%E0%B9%89%E0%B8%87-Phakkay-Camping-Cha-om-61583162128503/',
+      'https://page.line.me/977xgyji',
+    ],
     potentialAction: {
       '@type': 'ReserveAction',
       target: {

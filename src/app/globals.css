@@ -43,18 +43,9 @@
     @apply outline-2 outline-offset-2 outline-primary-500;
   }
 
-  /* Smooth image loading */
+  /* Smooth image loading - handled by Next.js Image component */
   img {
     @apply transition-opacity duration-300;
-  }
-
-  img[loading='lazy'] {
-    opacity: 0;
-  }
-
-  img.loaded,
-  img:not([loading='lazy']) {
-    opacity: 1;
   }
 }
 

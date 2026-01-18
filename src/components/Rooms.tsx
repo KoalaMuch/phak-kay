@@ -70,7 +70,7 @@ function RoomCard({
   capacity,
   price,
   extraBedAvailable,
-  index,
+  _index,
   isReversed,
 }: {
   roomKey: RoomKey;
@@ -78,21 +78,15 @@ function RoomCard({
   capacity: number;
   price: number;
   extraBedAvailable?: boolean;
-  index: number;
+  _index: number;
   isReversed: boolean;
 }) {
   const t = useTranslations('rooms');
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const features = t.raw(`types.${roomKey}.features`) as string[];
 
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 40 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-      transition={{ duration: 0.7, delay: index * 0.2 }}
+    <div
       className={cn(
         'grid gap-8 lg:grid-cols-2 lg:gap-12',
         isReversed && 'lg:grid-flow-dense'
@@ -112,6 +106,7 @@ function RoomCard({
           className="object-cover transition-transform duration-700 group-hover:scale-105"
           sizes="(max-width: 1024px) 100vw, 50vw"
           quality={75}
+          loading="eager"
         />
         {/* Price Badge */}
         <div className="absolute left-4 top-4 rounded-full bg-primary-700 px-4 py-2 shadow-lg">
@@ -223,7 +218,7 @@ function RoomCard({
           ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -302,7 +297,7 @@ export function Rooms() {
               capacity={room.capacity}
               price={room.price}
               extraBedAvailable={room.extraBedAvailable}
-              index={index}
+              _index={index}
               isReversed={index % 2 === 1}
             />
           ))}
