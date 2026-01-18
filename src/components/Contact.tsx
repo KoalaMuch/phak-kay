@@ -203,6 +203,16 @@ export function Contact() {
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* Honeypot field - hidden from users, bots will fill it */}
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    className="absolute -left-[9999px] h-0 w-0 opacity-0"
+                    aria-hidden="true"
+                  />
+
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div>
                       <label
@@ -216,6 +226,7 @@ export function Contact() {
                         id="name"
                         name="name"
                         required
+                        maxLength={100}
                         className="w-full rounded-xl border border-primary-200 bg-cream-50 px-4 py-3 text-primary-800 placeholder-primary-400 transition-colors focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
                       />
                     </div>
@@ -231,6 +242,7 @@ export function Contact() {
                         id="phone"
                         name="phone"
                         required
+                        maxLength={20}
                         className="w-full rounded-xl border border-primary-200 bg-cream-50 px-4 py-3 text-primary-800 placeholder-primary-400 transition-colors focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
                       />
                     </div>
@@ -248,6 +260,7 @@ export function Contact() {
                       id="email"
                       name="email"
                       required
+                      maxLength={254}
                       className="w-full rounded-xl border border-primary-200 bg-cream-50 px-4 py-3 text-primary-800 placeholder-primary-400 transition-colors focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
                     />
                   </div>
@@ -296,6 +309,7 @@ export function Contact() {
                       id="message"
                       name="message"
                       rows={4}
+                      maxLength={2000}
                       className="w-full rounded-xl border border-primary-200 bg-cream-50 px-4 py-3 text-primary-800 placeholder-primary-400 transition-colors focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
                     />
                   </div>

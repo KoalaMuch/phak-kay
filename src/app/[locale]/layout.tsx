@@ -147,7 +147,7 @@ export default async function LocaleLayout({
         value: true,
       },
     ],
-    numberOfRooms: 5,
+    numberOfRooms: 7,
     checkinTime: '14:00',
     checkoutTime: '12:00',
     petsAllowed: false,

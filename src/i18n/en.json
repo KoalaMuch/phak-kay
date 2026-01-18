@@ -34,7 +34,7 @@
       },
       "peaceful": {
         "title": "Intimate & Peaceful",
-        "description": "With only 5 exclusive units, we ensure a truly peaceful environment where you can disconnect and recharge."
+        "description": "With only 7 exclusive units, we ensure a truly peaceful environment where you can disconnect and recharge."
       },
       "waterfall": {
         "title": "Near Krok Ee Dok Waterfall",
@@ -99,11 +99,26 @@
   },
   "rooms": {
     "title": "Our Accommodations",
-    "subtitle": "Choose your perfect retreat - each room offers river views and intimate comfort",
+    "subtitle": "Choose your perfect retreat - each room offers river views, free breakfast, and intimate comfort",
     "capacity": "Up to {count} guests",
+    "priceLabel": "per night",
+    "extraBed": {
+      "title": "Extra Bed Available",
+      "description": "Additional bed available for Japanese style room",
+      "priceKid": "Child (7 or under): ฿300/night",
+      "priceAdult": "Adult (8+): ฿700/night"
+    },
+    "promotion": {
+      "active": true,
+      "title": "🔥 Special Promotion!",
+      "description": "Free Mookata (Thai BBQ) with every booking!",
+      "validUntil": "Valid until March 31, 2026"
+    },
     "types": {
       "nordic": {
         "title": "Nordic Style",
+        "price": "2,000",
+        "capacity": 2,
         "description": "Experience modern Scandinavian design with warm, cozy interiors. Our Nordic rooms feature clean lines, natural materials, and a minimalist aesthetic that creates the perfect sanctuary for relaxation.",
         "features": [
           "River view",
@@ -111,23 +126,31 @@
           "Private bathroom",
           "Air conditioning",
           "Free WiFi",
-          "Minibar"
+          "Minibar",
+          "Free breakfast"
         ]
       },
       "japanese": {
         "title": "Japanese Style",
-        "description": "Embrace the art of Zen living in our Japanese-inspired rooms. Traditional elements blend with modern comfort, offering a serene space that promotes peace and mindfulness.",
+        "price": "2,000",
+        "capacity": 2,
+        "extraBedAvailable": true,
+        "description": "Embrace the art of Zen living in our Japanese-inspired rooms. Traditional elements blend with modern comfort, offering a serene space that promotes peace and mindfulness. Extra bed available!",
         "features": [
           "River view",
           "King-size bed",
           "Private bathroom",
           "Air conditioning",
           "Free WiFi",
-          "Minibar"
+          "Minibar",
+          "Free breakfast",
+          "+1 extra bed available"
         ]
       },
       "aShape": {
         "title": "A-Frame Cabin",
+        "price": "3,000",
+        "capacity": 4,
         "description": "Discover our unique A-Frame cabins with their distinctive triangular design. Features a cozy ground floor bedroom and an adventurous loft sleeping area - perfect for families or groups of friends.",
         "features": [
           "River view",
@@ -136,7 +159,8 @@
           "Private bathroom",
           "Air conditioning",
           "Free WiFi",
-          "Minibar"
+          "Minibar",
+          "Free breakfast"
         ]
       }
     }
@@ -188,7 +212,7 @@
     "title": "Book Your Escape",
     "subtitle": "Ready to experience tranquility? Get in touch with us",
     "phone": "Call to Reserve",
-    "phoneNote": "We have only 5 exclusive units, booking via phone ensures personalized service",
+    "phoneNote": "We have only 7 exclusive units, booking via phone ensures personalized service",
     "social": {
       "title": "Connect With Us",
       "line": "LINE",

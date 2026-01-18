@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { cn } from '@/lib/utils';
-import { ROOM_TYPES } from '@/lib/utils';
+import { ROOM_TYPES, EXTRA_BED_PRICING } from '@/lib/utils';
 
 type RoomKey = 'nordic' | 'japanese' | 'aShape';
 
@@ -68,12 +68,16 @@ function RoomCard({
   roomKey,
   image,
   capacity,
+  price,
+  extraBedAvailable,
   index,
   isReversed,
 }: {
   roomKey: RoomKey;
   image: string;
   capacity: number;
+  price: number;
+  extraBedAvailable?: boolean;
   index: number;
   isReversed: boolean;
 }) {
@@ -109,6 +113,15 @@ function RoomCard({
           sizes="(max-width: 1024px) 100vw, 50vw"
           quality={75}
         />
+        {/* Price Badge */}
+        <div className="absolute left-4 top-4 rounded-full bg-primary-700 px-4 py-2 shadow-lg">
+          <span className="text-lg font-bold text-cream-50">
+            ฿{price.toLocaleString()}
+          </span>
+          <span className="ml-1 text-sm text-cream-200">
+            /{t('priceLabel')}
+          </span>
+        </div>
         {/* Capacity Badge */}
         <div className="absolute right-4 top-4 flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 backdrop-blur-sm">
           <svg
@@ -159,6 +172,32 @@ function RoomCard({
           {t(`types.${roomKey}.description`)}
         </p>
 
+        {/* Extra Bed Info - only for Japanese room */}
+        {extraBedAvailable && (
+          <div className="mb-6 rounded-xl border border-accent-200 bg-accent-50 p-4">
+            <h4 className="mb-2 flex items-center gap-2 font-semibold text-accent-700">
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                />
+              </svg>
+              {t('extraBed.title')}
+            </h4>
+            <div className="space-y-1 text-sm text-accent-600">
+              <p>{t('extraBed.priceKid')}</p>
+              <p>{t('extraBed.priceAdult')}</p>
+            </div>
+          </div>
+        )}
+
         {/* Features List */}
         <div className="grid grid-cols-2 gap-3">
           {features.map((feature, idx) => (
@@ -188,10 +227,42 @@ function RoomCard({
   );
 }
 
+function PromotionBanner() {
+  const t = useTranslations('rooms.promotion');
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }}
+      className="mx-auto mb-12 max-w-3xl overflow-hidden rounded-2xl bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 p-1 shadow-xl"
+    >
+      <div className="rounded-xl bg-white/95 px-6 py-5 backdrop-blur-sm">
+        <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
+          {/* Fire icon */}
+          <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-orange-400 to-red-500 text-2xl shadow-lg">
+            🍖
+          </div>
+          <div className="flex-1">
+            <h3 className="text-xl font-bold text-primary-800">{t('title')}</h3>
+            <p className="text-lg text-primary-600">{t('description')}</p>
+            <p className="mt-1 text-sm font-medium text-orange-600">
+              {t('validUntil')}
+            </p>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export function Rooms() {
   const t = useTranslations('rooms');
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  // Mark EXTRA_BED_PRICING as used (for future expansion)
+  void EXTRA_BED_PRICING;
 
   return (
     <section
@@ -218,6 +289,9 @@ export function Rooms() {
           <p className="text-lg text-primary-600">{t('subtitle')}</p>
         </motion.div>
 
+        {/* Promotion Banner */}
+        <PromotionBanner />
+
         {/* Room Cards */}
         <div className="space-y-16 lg:space-y-24">
           {ROOM_TYPES.map((room, index) => (
@@ -226,6 +300,8 @@ export function Rooms() {
               roomKey={room.key}
               image={room.image}
               capacity={room.capacity}
+              price={room.price}
+              extraBedAvailable={room.extraBedAvailable}
               index={index}
               isReversed={index % 2 === 1}
             />

@@ -26,10 +26,11 @@ export const RESORT_LOCATION = {
  * Contact information
  */
 export const CONTACT_INFO = {
-  phone: '+66-XX-XXX-XXXX', // Replace with actual phone number
-  email: 'contact@phakkaycamping.com', // Replace with actual email
-  line: '#LINE_PLACEHOLDER', // Replace with actual LINE ID or URL
-  facebook: '#FACEBOOK_PLACEHOLDER', // Replace with actual Facebook URL
+  phone: '+66 92-502-4995',
+  email: 'contact@phakkaycamping.com',
+  line: 'https://page.line.me/977xgyji',
+  facebook:
+    'https://www.facebook.com/p/%E0%B8%9E%E0%B8%B1%E0%B8%81%E0%B8%81%E0%B8%B2%E0%B8%A2-%E0%B9%81%E0%B8%84%E0%B8%A1%E0%B8%9B%E0%B9%8C%E0%B8%9B%E0%B8%B4%E0%B9%89%E0%B8%87-Phakkay-Camping-Cha-om-61583162128503/',
 };
 
 /**
@@ -327,14 +328,17 @@ export function formatPhoneLink(phone: string): string {
 export interface RoomType {
   key: 'nordic' | 'japanese' | 'aShape';
   capacity: number;
+  price: number;
   image: string;
   galleryImages: string[];
+  extraBedAvailable?: boolean;
 }
 
 export const ROOM_TYPES: RoomType[] = [
   {
     key: 'nordic',
     capacity: 2,
+    price: 2000,
     image: '/images/room-type-nordic-overview.jpg',
     galleryImages: [
       '/images/room-type-nordic-overview.jpg',
@@ -346,6 +350,8 @@ export const ROOM_TYPES: RoomType[] = [
   {
     key: 'japanese',
     capacity: 2,
+    price: 2000,
+    extraBedAvailable: true,
     image: '/images/room-type-japan-bedroom-1.jpg',
     galleryImages: [
       '/images/room-type-japan-bedroom-1.jpg',
@@ -356,6 +362,7 @@ export const ROOM_TYPES: RoomType[] = [
   {
     key: 'aShape',
     capacity: 4,
+    price: 3000,
     image: '/images/room-type-A-shape-overview.jpg',
     galleryImages: [
       '/images/room-type-A-shape-overview.jpg',
@@ -366,3 +373,11 @@ export const ROOM_TYPES: RoomType[] = [
     ],
   },
 ];
+
+/**
+ * Extra bed pricing
+ */
+export const EXTRA_BED_PRICING = {
+  child: 300, // 7 years old or under
+  adult: 700, // 8 years old or above
+};
