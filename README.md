@@ -2,6 +2,8 @@
 
 A luxury, bilingual (Thai/English) landing page for Phakkay Camping resort - a peaceful riverside retreat in Saraburi, Thailand.
 
+🌐 **Live Site**: [https://phak-kay.vercel.app/](https://phak-kay.vercel.app/)
+
 ![Resort Preview](public/images/resort_garden_evening.jpg)
 
 ## Overview
@@ -282,9 +284,10 @@ This project is private and proprietary to Phakkay Camping.
 
 ## Contact
 
-- **Resort**: [Phone number to be added]
+- **Phone**: +66 92-502-4995
+- **LINE**: [@phakkaycamping](https://lin.ee/vyGkN7r)
+- **Facebook**: [พักกาย แคมป์ปิ้ง](https://www.facebook.com/p/%E0%B8%9E%E0%B8%B1%E0%B8%81%E0%B8%81%E0%B8%B2%E0%B8%A2-%E0%B9%81%E0%B8%84%E0%B8%A1%E0%B8%9B%E0%B9%8C%E0%B8%9B%E0%B8%B4%E0%B9%89%E0%B8%87-Phakkay-Camping-Cha-om-61583162128503/)
 - **Location**: 391 Cha Om, Kaeng Khoi District, Saraburi 18110, Thailand
-- **Developer**: [Your contact]
 
 ---
 
