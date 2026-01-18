@@ -28,7 +28,7 @@ export const RESORT_LOCATION = {
 export const CONTACT_INFO = {
   phone: '+66 92-502-4995',
   email: 'contact@phakkaycamping.com',
-  line: 'https://page.line.me/977xgyji',
+  line: 'https://lin.ee/vyGkN7r',
   facebook:
     'https://www.facebook.com/p/%E0%B8%9E%E0%B8%B1%E0%B8%81%E0%B8%81%E0%B8%B2%E0%B8%A2-%E0%B9%81%E0%B8%84%E0%B8%A1%E0%B8%9B%E0%B9%8C%E0%B8%9B%E0%B8%B4%E0%B9%89%E0%B8%87-Phakkay-Camping-Cha-om-61583162128503/',
 };

@@ -210,11 +210,10 @@
   },
   "contact": {
     "title": "Book Your Escape",
-    "subtitle": "Ready to experience tranquility? Get in touch with us",
-    "phone": "Call to Reserve",
-    "phoneNote": "We have only 7 exclusive units, booking via phone ensures personalized service",
+    "subtitle": "We have only 7 exclusive units - book now to secure your stay!",
+    "bookingMethods": "Choose your preferred booking method",
+    "phone": "Phone",
     "social": {
-      "title": "Connect With Us",
       "line": "LINE",
       "facebook": "Facebook"
     },
