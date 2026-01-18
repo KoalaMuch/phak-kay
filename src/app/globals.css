@@ -162,6 +162,37 @@
   @apply m-3 font-sans;
 }
 
+/* Hero title animation - CSS-only, doesn't block LCP */
+@keyframes heroTitleReveal {
+  from {
+    opacity: 0.9;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroSubtitleReveal {
+  from {
+    opacity: 0.8;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-title-animate {
+  animation: heroTitleReveal 0.5s ease-out forwards;
+}
+
+.hero-subtitle-animate {
+  animation: heroSubtitleReveal 0.5s ease-out 0.1s forwards;
+}
+
 /* Lightbox animations */
 @keyframes fadeIn {
   from {

@@ -4,6 +4,10 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
+// Blur placeholder for instant perceived loading
+const BACKGROUND_BLUR =
+  'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAUH/8QAIhAAAgEDBAMBAAAAAAAAAAAAAQIDAAQRBRIhMQYTQVH/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABkRAAIDAQAAAAAAAAAAAAAAAAECAAMRIf/aAAwDAQACEQMRAD8AzXS9Rv8ASr2O8sLp7e4j5SRDgg9H+j4NaVZ/k2sXlrDPNq0wkkjV2C7QASASBx9pSqfU7EL1G4ycS//Z';
+
 export function Hero() {
   const t = useTranslations('hero');
 
@@ -12,7 +16,7 @@ export function Hero() {
       data-component="hero"
       className="relative flex min-h-screen items-center justify-center overflow-hidden"
     >
-      {/* Background Image */}
+      {/* Background Image - priority for LCP */}
       <div className="absolute inset-0">
         <Image
           src="/images/background.jpg"
@@ -21,7 +25,9 @@ export function Hero() {
           priority
           className="object-cover"
           sizes="100vw"
-          unoptimized
+          placeholder="blur"
+          blurDataURL={BACKGROUND_BLUR}
+          quality={75}
         />
         {/* Overlay */}
         <div className="absolute inset-0 bg-hero-overlay" />
@@ -31,55 +37,47 @@ export function Hero() {
 
       {/* Content */}
       <div className="section-container relative z-10 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mx-auto max-w-4xl"
-        >
-          {/* Tagline */}
+        <div className="mx-auto max-w-4xl">
+          {/* Tagline - subtle animation, not LCP */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-cream-200 sm:text-base"
           >
             {t('tagline')}
           </motion.p>
 
-          {/* Title */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="mb-4 font-display text-5xl font-bold text-cream-50 sm:text-6xl md:text-7xl lg:text-8xl"
+          {/* Title - NO animation delay, renders immediately for LCP */}
+          <h1
+            className="hero-title-animate mb-4 font-display text-5xl font-bold text-cream-50 sm:text-6xl md:text-7xl lg:text-8xl"
             style={{ fontSize: 'var(--font-size-hero)' }}
           >
             {t('title')}
-          </motion.h1>
+          </h1>
 
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="mb-6 font-display text-xl text-cream-100 sm:text-2xl md:text-3xl"
-          >
+          {/* Subtitle - NO animation delay for fast paint */}
+          <p className="hero-subtitle-animate mb-6 font-display text-xl text-cream-100 sm:text-2xl md:text-3xl">
             {t('subtitle')}
-          </motion.p>
+          </p>
 
-          {/* Description */}
+          {/* Description - light animation */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.9 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
             className="mx-auto mb-10 max-w-2xl text-base text-cream-200 sm:text-lg"
           >
             {t('description')}
           </motion.p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-col items-center justify-center gap-4 sm:flex-row"
+          >
             <a
               href="#highlights"
               className="btn-primary group bg-cream-50 text-primary-800 hover:bg-cream-100"
@@ -105,8 +103,8 @@ export function Hero() {
             >
               {t('ctaSecondary')}
             </a>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

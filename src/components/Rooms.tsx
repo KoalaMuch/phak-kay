@@ -107,7 +107,7 @@ function RoomCard({
           fill
           className="object-cover transition-transform duration-700 group-hover:scale-105"
           sizes="(max-width: 1024px) 100vw, 50vw"
-          unoptimized
+          quality={75}
         />
         {/* Capacity Badge */}
         <div className="absolute right-4 top-4 flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 backdrop-blur-sm">
