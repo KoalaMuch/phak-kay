@@ -17,6 +17,24 @@ jest.mock('next-intl', () => ({
   useLocale: () => 'en',
 }));
 
+// Mock @/i18n/routing - this is used by Navigation component
+jest.mock('@/i18n/routing', () => ({
+  locales: ['en', 'th'],
+  defaultLocale: 'th',
+  // eslint-disable-next-line react/display-name
+  Link: ({ children, href, locale, ...props }) => (
+    <a href={locale ? `/${locale}${href}` : href} {...props}>
+      {children}
+    </a>
+  ),
+  redirect: jest.fn(),
+  usePathname: () => '/',
+  useRouter: () => ({
+    push: jest.fn(),
+    replace: jest.fn(),
+  }),
+}));
+
 // Mock framer-motion with all needed elements
 jest.mock('framer-motion', () => {
   const createMotionComponent =
