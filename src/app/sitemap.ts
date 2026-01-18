@@ -1,8 +1,10 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || 'https://phakkaycamping.com';
+  // Remove trailing slash if present
+  const baseUrl = (
+    process.env.NEXT_PUBLIC_SITE_URL || 'https://phakkaycamping.com'
+  ).replace(/\/$/, '');
 
   return [
     {
